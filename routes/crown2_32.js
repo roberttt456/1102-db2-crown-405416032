@@ -16,6 +16,13 @@ router.get('/', async function (req, res, next) {
     }
 });
 
+
+
+router.get('/shop_32/jackets',function (req,res,next){
+    res.render('crown2_32/jackets', { title: 'Express' });
+});
+
+
 /*
 <% for(let i=0;i<data.lenght;i++) { %>
 <div class="<>">

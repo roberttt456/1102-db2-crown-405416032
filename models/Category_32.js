@@ -35,6 +35,6 @@ const test = async function(){
     console.log('test results',JSON.stringify(results));
 }
 
-test();
+//test();
 
 module.exports = Category_32;
