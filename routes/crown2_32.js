@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const Category_32 = require("../models/Category_32");
+const shop_32 = require("../models/shop_32")
 
 /* GET home page. */
 router.get('/', async function (req, res, next) {
@@ -18,8 +19,19 @@ router.get('/', async function (req, res, next) {
 
 
 
-router.get('/shop_32/jackets',function (req,res,next){
-    res.render('crown2_32/jackets', { title: 'Express' });
+router.get('/shop_32/jackets',async function (req, res, next) {
+    //res.render('crown2_32/jackets', {title: 'Express'});
+    try {
+        let results = await shop_32.fetchAll();
+        console.log('results', JSON.stringify(results));
+        res.render('crown2_32/jackets', {
+            data: results,
+            id: '405416032',
+            title: 'crown2_32'
+        });
+    } catch (err) {
+        console.log('err');
+    }
 });
 
 

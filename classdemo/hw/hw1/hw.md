@@ -1,6 +1,6 @@
 
 ###P0: Github repo URL, 請分享給老師 (htchung@gms.tku.edu.tw) 及助教 (jerry7657)
-
+https://github.com/roberttt456/1102-db2-crown-405416032.git
 
 ###P1: 資料庫截圖，要能顯示 shop_xx, 及所要實作之產品 data
 

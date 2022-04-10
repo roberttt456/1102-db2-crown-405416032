@@ -13,6 +13,7 @@ if(isProduction){
         }
     )
 }else {
+    // local database
     pool = new Pool({
         user: 'postgres',
         host: 'localhost',
@@ -20,6 +21,9 @@ if(isProduction){
         database: 'crown_405416032',
         password: '0000'
     })
+
+    // heroku database
+
 }
 
 module.exports = pool;
