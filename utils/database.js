@@ -6,7 +6,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 let pool;
 
 if(isProduction){
-    pool=new pool(
+    pool=new Pool(
         {
             connectionString: process.env.DATEBASE_URL,
             ssl: {rejectUnauthorized: false}
@@ -15,7 +15,7 @@ if(isProduction){
 }else {
     // local database
 
-    pool = new Pool({
+    pool =  new Pool({
         user: 'postgres',
         host: 'localhost',
         port: '5432',
