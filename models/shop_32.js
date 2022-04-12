@@ -41,11 +41,11 @@ const shop_32 = class shop_32{
 
 
 //測試程式
-const test = async() =>{
-    let results = await shop_32.fetchPro(1);
-    console.log('test results',JSON.stringify(results));
-}
-
-test();
+// const test = async() =>{
+//     let results = await shop_32.fetchPro(1);
+//     console.log('test results',JSON.stringify(results));
+// }
+//
+// test();
 
 module.exports = shop_32;

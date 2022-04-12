@@ -19,22 +19,32 @@ router.get('/', async function (req, res, next) {
 
 
 
-router.get('/shop_32/jackets',async function (req, res, next) {
-    //res.render('crown2_32/jackets', {title: 'Express'});
+// router.get('/shop_32/jackets',async function (req, res, next) {
+//     //res.render('crown2_32/jackets', {title: 'Express'});
+//     try {
+//         let results = await shop_32.fetchAll();
+//         console.log('results', JSON.stringify(results));
+//         res.render('crown2_32/jackets', {
+//             data: results,
+//             id: '405416032',
+//             title: 'crown2_32'
+//         });
+//     } catch (err) {
+//         console.log('err');
+//     }
+// });
+
+router.get('/shop_32/:category',async function (req, res, next) {
+    console.log('category',req.params.category)
     try {
-        let results = await shop_32.fetchAll();
-        console.log('results', JSON.stringify(results));
-        res.render('crown2_32/jackets', {
-            data: results,
-            id: '405416032',
-            title: 'crown2_32'
-        });
+        const cid = await Category_32.fetchCat(req.params.category);
+        console.log('cid',cid);
+        const results = await shop_32.fetchPro(cid);
+        console.log('results',JSON.stringify(results));
     } catch (err) {
         console.log('err');
     }
 });
-
-
 /*
 <% for(let i=0;i<data.lenght;i++) { %>
 <div class="<>">

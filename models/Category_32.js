@@ -18,15 +18,23 @@ const Category_32 = class Category_32{
         try{
             let results = await db.query(`SELECT * from category_32`);
             //console.log('results', JSON.stringify(results.rows));
-
             return results.rows;
         }catch (err){
             console.log('error',err)
         }
+    }
 
-
+    static async fetchCat(name){
+        try{
+            let results = await db.query(`SELECT * from category_32 where name = $1`,[name])
+            return results.rows[0].id;
+        }catch (err) {
+            console.log(err);
+        }
     }
 }
+
+
 
 //測試程式
 const test = async function(){
