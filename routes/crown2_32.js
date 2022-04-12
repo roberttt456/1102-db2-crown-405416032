@@ -38,9 +38,16 @@ router.get('/shop_32/:category',async function (req, res, next) {
     console.log('category',req.params.category)
     try {
         const cid = await Category_32.fetchCat(req.params.category);
-        console.log('cid',cid);
-        const results = await shop_32.fetchPro(cid);
+        // console.log('cid',cid);
+        let results = await shop_32.fetchPro(cid);
         console.log('results',JSON.stringify(results));
+
+        res.render('crown2_32/product_32',{
+            data: results,
+            title: req.params.category,
+            name: '黃嘉雄',
+            id: '405416032'
+        });
     } catch (err) {
         console.log('err');
     }
