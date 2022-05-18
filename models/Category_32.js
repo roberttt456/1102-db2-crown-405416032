@@ -26,7 +26,7 @@ const Category_32 = class Category_32{
 
     static async fetchCat(name){
         try{
-            let results = await db.query(`SELECT * from category_32 where name = $1`,[name])
+            let results = await db.query(`SELECT * from category_32 where name = $1`,[name]);
             return results.rows[0].id;
         }catch (err) {
             console.log(err);
