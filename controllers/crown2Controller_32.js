@@ -1,6 +1,14 @@
 const Category_32 = require("../models/Category_32");
 const shop_32 = require("../models/shop_32");
 
+// create
+exports.createProducts = async (req,res)=>{
+    console.log('body',req.body);
+    res.json({msg:'create -- body data received'});
+};
+
+
+//read
 exports.getCategories = async (req,res)=>{
     try {
         let results = await Category_32.fetchAll();
