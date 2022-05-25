@@ -1,3 +1,5 @@
+
+
 const {Pool} = require('pg');
 const {connectionString} = require("pg/lib/defaults");
 
@@ -21,7 +23,7 @@ if(isProduction){
         user: 'postgres',
         host: 'localhost',
         port: '5432',
-        database: 'crown_405416032',
+        database: 'crown_32',
         password: '0000'
     })
 

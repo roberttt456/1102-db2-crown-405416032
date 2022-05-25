@@ -12,6 +12,18 @@ const shop_32 = class shop_32{
         this.cat_id=cat_id;
     }
 
+    //create
+    static async create(body){
+        const { id, name, cat_id, price, remote_url,local_url
+        }=body;
+        const queryStr = {
+            text : `INSERT INTO shop_32 (id,name,cat_id,price,remote_url,local_url) VALUES ($1,$2,$3,$4,$5,$6)`,
+            values:[id,name,cat_id,price,remote_url,local_url],
+        };
+        return db.query(queryStr);
+    }
+
+
     //get all categories
 
     static async fetchAll(){
